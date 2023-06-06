@@ -23,13 +23,13 @@ if(select !=="" && numInput !=="")
           
         })
         .catch(error => { //Если промис был отклонён
-//я вот тут пишу???
+
           reject(error);
 
         });
       });
 
- searchObj.then(json => {
+        searchObj.then(json => {
         console.log(json);
     }).catch(function (value) { // Если промис был отклонён
   
