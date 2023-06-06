@@ -16,16 +16,28 @@ if(select !=="" && numInput !=="")
         .then(response => response.json())
 
         .then(json => {
-          resolve(json);
+            console.log(json.name);
 
-          // теперь свой код я пишу тут???
+        
           
           
         })
-        .catch(error => {
+        .catch(error => { //Если промис был отклонён
+//я вот тут пишу???
           reject(error);
+
         });
       });
+
+ searchObj.then(json => {
+        console.log(json);
+    }).catch(function (value) { // Если промис был отклонён
+  
+    //   /* Здесь параметр value будет хранить то значение,
+    //   которое было передано методу reject,
+  
+      console.log(value + ', нам жаль :(');
+    });
 
 
 
