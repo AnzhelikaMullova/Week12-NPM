@@ -12,30 +12,32 @@ function searchObj(){
 
 
 
-if( select !=="" ){ 
+if( select !=="" && numInput!==""){ 
 
-    fetch('https://swapi.dev/api/')
+
+    const newPromise = new Promise((resolve, reject) => {
+
+    fetch(url)
     .then(response => response.json())
     .then(json => {
 
-     let results = json.results;
-     console.log(results);
+    let results = json.results;
+    console.log(results);
 
 results.forEach(element => {
 console.log(element.name)
 });
 
+})//скобки для закрытия then
 
+.catch(error => {
+    reject(error);
 
-    })//скобки для закрытия then
+});
 
-
+    })
 }
 }
 
 button.addEventListener('click', searchObj);
 
-
-// let people = document.getElementById('people').value;
-// let planets = document.getElementById('planets').value;
-// let films = document.getElementById('films').value;
