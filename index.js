@@ -15,12 +15,12 @@ if( people !=="" ){ // если выбрана секция люди, то де�
     fetch('https://swapi.dev/api/people/')
     .then(response => response.json())
     .then(json => {
+       
+let results = json.results;
+console.log(results);
 
-        json.forEach(element => {
-            console.log(element.name)
-            
-        });
-
+       
+      
 
 
 
