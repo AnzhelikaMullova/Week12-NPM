@@ -1,22 +1,25 @@
 
 let button = document.getElementById('button');
-let numInput =document.getElementById('numberInput').value;
-let select=document.getElementById('select').value;
 
-
-
-const url = 'https://swapi.dev/api/${select}/${numInput}'
 
 function searchObj(){
 
-if( select !=="" ){ // если выбрана секция люди, то делаем feech запрос
+    let numInput =document.getElementById('numberInput').value;
+    let select=document.getElementById('select').value;    
+    const url = `https://swapi.dev/api/${select}/${numInput}`
+
+
+
+
+
+if( select !=="" ){ 
 
     fetch('https://swapi.dev/api/')
     .then(response => response.json())
     .then(json => {
 
-let results = json.results;
-console.log(results);
+     let results = json.results;
+     console.log(results);
 
 results.forEach(element => {
 console.log(element.name)
