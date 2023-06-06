@@ -17,6 +17,10 @@ if(select !=="" && numInput !=="")
 
         .then(json => {
           resolve(json);
+
+          // теперь свой код я пишу тут???
+          
+          
         })
         .catch(error => {
           reject(error);
