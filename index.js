@@ -8,36 +8,24 @@ function searchObj(){
     let select=document.getElementById('select').value;    
     const url = `https://swapi.dev/api/${select}/${numInput}`
 
-
-
-
-
-if( select !=="" && numInput!==""){ 
-
-
     const newPromise = new Promise((resolve, reject) => {
 
-    fetch(url)
-    .then(response => response.json())
-    .then(json => {
+if(select !=="" && numInput !=="") 
 
-    let results = json.results;
-    console.log(results);
+        fetch(url)
+        .then(response => response.json())
 
-results.forEach(element => {
-console.log(element.name)
-});
+        .then(json => {
+          resolve(json);
+        })
+        .catch(error => {
+          reject(error);
+        });
+      });
 
-})//скобки для закрытия then
 
-.catch(error => {
-    reject(error);
 
-});
 
-    })
 }
-}
-
 button.addEventListener('click', searchObj);
 
