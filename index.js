@@ -3,6 +3,7 @@ let button = document.getElementById('button');
 
 
 function searchObj(){
+    let container =document.getElementById('container');
 
     let numInput =document.getElementById('numberInput').value;
     let select=document.getElementById('select').value;    
@@ -16,10 +17,7 @@ if(select !=="" && numInput !=="")
         .then(response => response.json())
 
         .then(json => {
-            console.log(json.name);
-
-        
-          
+       container.innerHTML=`<p>${json.name}</p>`;
           
         })
         .catch(error => { //Если промис был отклонён
@@ -29,9 +27,14 @@ if(select !=="" && numInput !=="")
         });
       });
 
-        searchObj.then(json => {
-        console.log(json);
-    }).catch(function (value) { // Если промис был отклонён
+        newPromise.then(json => {
+         
+          
+         
+    })
+    
+    
+    .catch(function (value) { // Если промис был отклонён
   
     //   /* Здесь параметр value будет хранить то значение,
     //   которое было передано методу reject,
