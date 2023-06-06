@@ -18,6 +18,9 @@ if( people !=="" ){ // если выбрана секция люди, то де�
        
 let results = json.results;
 console.log(results);
+results.forEach(element => {
+console.log(element.name)
+});
 
        
       
