@@ -23,6 +23,7 @@ if(select !=="" && numInput !=="")
         .catch(error => { //Если промис был отклонён
 
           reject(error);
+        
 
         });
       });
@@ -30,7 +31,6 @@ if(select !=="" && numInput !=="")
         newPromise.then(json => {
          
           
-         
     })
     
     
@@ -38,9 +38,9 @@ if(select !=="" && numInput !=="")
   
     //   /* Здесь параметр value будет хранить то значение,
     //   которое было передано методу reject,
-  
-      console.log(value + ', нам жаль :(');
-    });
+    container.innerHTML=`<p>${value} + ', нам жаль :(')</p>`;
+     
+    }); 
 
 
 
